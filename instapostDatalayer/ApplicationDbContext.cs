@@ -6,7 +6,7 @@ public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-    public DbSet<UserEntity> usersDb { get; set; }
-    public DbSet<CategoryEntity> categoryDb { get; set; }
-    public DbSet<PostEntity> postDb{ get; set; }
+    public DbSet<UserEntity> UsersDb { get; set; }
+    public DbSet<CategoryEntity> CategoryDb { get; set; }
+    public DbSet<PostEntity> PostDb{ get; set; }
 }
