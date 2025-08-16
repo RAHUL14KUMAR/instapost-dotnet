@@ -12,8 +12,8 @@ namespace instapostEntitylayer
         [Required]
         public string postDesc { get; set; }
 
-        public ICollection<CategoryEntity> postCategory { get; set; }
+        public ICollection<CategoryEntity> postCategory { get; set; } = new List<CategoryEntity>();
 
-        public ICollection<UserEntity> user;
+        public ICollection<UserEntity> user = new List<UserEntity>();
     }
 }
