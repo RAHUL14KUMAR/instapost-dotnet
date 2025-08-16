@@ -21,9 +21,11 @@ namespace instapostBusinesslayer.Repository
         {
             return null;
         }
-        public Task<CategoryEntity> GetCategoryById(long id)
+        public async Task<CategoryEntity> GetCategoryById(long id)
         {
-            return null;
+            var res = await dbContext.CategoryDb.FindAsync(id);
+            Console.WriteLine("getCategoryBy id result "+res);
+            return res;
         }
         public Task<List<CategoryEntity>> GetAllCategory()
         {
