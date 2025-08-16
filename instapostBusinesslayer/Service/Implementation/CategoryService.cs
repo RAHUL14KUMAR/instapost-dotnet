@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using instapostBusinesslayer.Interface.CategoryInterface;
 using instapostBusinesslayer.Repository;
 using instapostBusinesslayer.Service.Interface;
 using instapostBusinesslayer.ViewModels;
@@ -9,8 +10,8 @@ namespace instapostBusinesslayer.Service.Implementation
 {
     public class CategoryService : CategorySInterface
     {
-        private CategoryRepository cr;
-        public CategoryService(CategoryRepository crs)
+        private readonly CategoryIRepository cr;
+        public CategoryService(CategoryIRepository crs)
         {
             cr = crs;
         }

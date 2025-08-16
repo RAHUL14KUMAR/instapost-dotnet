@@ -7,9 +7,9 @@ namespace instapostEntitylayer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long id;
+        public long id{ get; set; }
 
-        public string categoryName;
+        public string categoryName{ get; set; }
 
         public ICollection<PostEntity> posts { get; set; } = new List<PostEntity>();
 

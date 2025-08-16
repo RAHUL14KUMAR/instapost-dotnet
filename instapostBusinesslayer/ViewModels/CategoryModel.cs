@@ -5,9 +5,9 @@ namespace instapostBusinesslayer.ViewModels
     public class CategoryModel
     {
         [Key]
-        public long id;
+        public long id{ get; set; }
 
-        public string categoryName;
+        public string categoryName{ get; set; }
 
         public ICollection<PostModel> posts { get; set; } = new List<PostModel>();
 

@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\instapostDataLayer\instapostDataLayer.csproj" />
     <ProjectReference Include="..\instapostEntityLayer\instapostEntityLayer.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
   </ItemGroup>
 
   <PropertyGroup>

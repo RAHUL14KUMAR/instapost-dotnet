@@ -6,7 +6,7 @@ namespace instapostBusinesslayer.Repository
 {
     public class CategoryRepository : CategoryIRepository
     {
-        private ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext dbContext;
         public CategoryRepository(ApplicationDbContext db)
         {
             dbContext = db;

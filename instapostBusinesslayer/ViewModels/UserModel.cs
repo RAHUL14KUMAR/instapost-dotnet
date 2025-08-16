@@ -5,7 +5,7 @@ namespace instapostBusinesslayer.ViewModels
     public class UserModel
     {
         [Key]
-        public long id;
+        public long id{ get; set; }
         [Required]
         public string username { get; set; }
 

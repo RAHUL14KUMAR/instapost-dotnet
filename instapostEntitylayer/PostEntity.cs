@@ -7,7 +7,7 @@ namespace instapostEntitylayer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long id;
+        public long id{ get; set; }
 
         [Required]
         public string postDesc { get; set; }
