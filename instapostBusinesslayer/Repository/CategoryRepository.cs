@@ -1,6 +1,7 @@
 using instapostBusinesslayer.Interface.CategoryInterface;
 using instapostDataLayer;
 using instapostEntitylayer;
+using Microsoft.EntityFrameworkCore;
 
 namespace instapostBusinesslayer.Repository
 {
@@ -12,9 +13,12 @@ namespace instapostBusinesslayer.Repository
             dbContext = db;
         }
 
-        public Task<long> CreateCategory(CategoryEntity ce)
+        public async Task<long> CreateCategory(CategoryEntity ce)
         {
-            return null;
+            dbContext.CategoryDb.Add(ce);
+            await dbContext.SaveChangesAsync();
+            Console.WriteLine("result after adding the category ");
+            return ce.id;
         }
 
         public Task<bool> UpdateCategory(CategoryEntity ce)
@@ -27,9 +31,10 @@ namespace instapostBusinesslayer.Repository
             Console.WriteLine("getCategoryBy id result "+res);
             return res;
         }
-        public Task<List<CategoryEntity>> GetAllCategory()
+        public async Task<List<CategoryEntity>> GetAllCategory()
         {
-            return null;
+            var res = await dbContext.CategoryDb.ToListAsync();
+            return res;
         }
     }
 }

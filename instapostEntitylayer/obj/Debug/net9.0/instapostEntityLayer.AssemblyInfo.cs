@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("instapostEntityLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7009316534403566786cf03bf95c102e15e39fae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc27c880b93adbb03230aa7189777fdd88b316e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("instapostEntityLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("instapostEntityLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

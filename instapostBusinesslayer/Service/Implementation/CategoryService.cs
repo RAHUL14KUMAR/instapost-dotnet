@@ -16,13 +16,13 @@ namespace instapostBusinesslayer.Service.Implementation
             cr = crs;
         }
 
-        public Task<long> CreateCategory(CategoryModel cm)
+        public async Task<long> CreateCategory(CategoryModel cm)
         {
             var ce = new CategoryEntity();
             ce.categoryName = cm.categoryName;
 
-            cr.CreateCategory(ce);
-            return null;
+            var res=await cr.CreateCategory(ce);
+            return res;
         }
 
         public Task<bool> UpdateCategory(CategoryModel cm)
@@ -59,10 +59,33 @@ namespace instapostBusinesslayer.Service.Implementation
             return cm;
         }
 
-        public Task<List<CategoryModel>> GetAllCategory()
+        public async Task<List<CategoryModel>> GetAllCategory()
         {
-            var res=cr.GetAllCategory();
-            return null;
+            var res=await cr.GetAllCategory();
+            var ans=res.Select(cm => new CategoryModel
+            {
+                id = cm.id,
+                categoryName = cm.categoryName,
+                posts = cm.posts.Select(p => new PostModel
+                {
+                    id = p.id,
+                    postDesc = p.postDesc,
+                    postCategory = p.postCategory.Select(c => new CategoryModel
+                    {
+                        id = c.id,
+                        categoryName = c.categoryName
+                    }).ToList()
+                }).ToList(),
+                
+                users=cm.users.Select(u=>new UserModel
+                {
+                    id = u.id,
+                    username = u.username,
+                    email=u.email,
+                    password=u.password
+                }).ToList()
+            }).ToList();
+            return ans;
         }
     }
 }
