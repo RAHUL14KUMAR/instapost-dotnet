@@ -4,7 +4,7 @@ namespace instapostBusinesslayer.Interface.PostInterface
 {
     public interface PostIRepository
     {
-        Task<int> CreatePost(PostEntity pe);
+        Task<long> CreatePost(PostEntity pe);
         Task<bool> UpdatePost(PostEntity pe);
 
         Task<PostEntity> GetPostById(long id);

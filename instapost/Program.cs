@@ -1,4 +1,5 @@
 using instapostBusinesslayer.Interface.CategoryInterface;
+using instapostBusinesslayer.Interface.PostInterface;
 using instapostBusinesslayer.Interface.UserInterface;
 using instapostBusinesslayer.Repository;
 using instapostBusinesslayer.Service.Implementation;
@@ -19,6 +20,9 @@ builder.Services.AddScoped<CategorySInterface, CategoryService>();
 
 builder.Services.AddScoped<UserIRepository, UserRepository>();
 builder.Services.AddScoped<UserSInterface, UserService>();
+
+builder.Services.AddScoped<PostIRepository, PostRepository>();
+builder.Services.AddScoped<PostSInterface, PostService>();
 
 builder.Services.AddControllers();
 var app = builder.Build();
