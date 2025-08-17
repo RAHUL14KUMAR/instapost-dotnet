@@ -25,6 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+// through this code we can test the api through thunder c;ient or postman
 app.MapControllers();
 var summaries = new[]
 {
