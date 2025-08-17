@@ -7,7 +7,7 @@ namespace instapostBusinesslayer.Interface.UserInterface
         Task<long> CreateUser(UserEntity ue);
         Task<UserEntity> GetUserById(long id);
 
-        Task<bool> UpdateUser(UserEntity ue);
+        Task<bool> UpdateUser(long userId,long[] categoryInterest);
 
         Task<List<UserEntity>> GetAllUsers();
 

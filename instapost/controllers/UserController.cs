@@ -17,26 +17,33 @@ namespace instapost.controller
         [Route("createUser")]
         public async Task<IActionResult> addUser(UserModel um)
         {
-            return null;
+            var data = await us.CreateUser(um);
+            return Ok(data);
         }
 
         [HttpGet]
         [Route("user/{id}")]
         public async Task<IActionResult> GetUserById(long id)
         {
-            return null;
+            var data = await us.GetUserById(id);
+            return Ok(data);
         }
 
         [HttpPut]
-        [Route("user")]
-        public async Task<IActionResult> UpdateUser(UserModel um)
+        [Route("user/{userId}")]
+        public async Task<IActionResult> UpdateUser(long userId,[FromBody] long[] cI)
         {
-            return null;
+            Console.WriteLine("ci -> " + string.Join(",", cI));
+            var data = await us.UpdateUser(userId,cI);
+            return Ok(data);
         }
 
+        [HttpGet]
+        [Route("users")]
         public async Task<IActionResult> GetAllUsers()
         {
-            return null;
+            var data = await us.GetAllUsers();
+            return Ok(data);
         }
     }
 }
