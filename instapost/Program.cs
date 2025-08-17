@@ -1,4 +1,5 @@
 using instapostBusinesslayer.Interface.CategoryInterface;
+using instapostBusinesslayer.Interface.UserInterface;
 using instapostBusinesslayer.Repository;
 using instapostBusinesslayer.Service.Implementation;
 using instapostBusinesslayer.Service.Interface;
@@ -15,6 +16,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(Options => Options.UseNpgsql
 
 builder.Services.AddScoped<CategoryIRepository, CategoryRepository>();
 builder.Services.AddScoped<CategorySInterface, CategoryService>();
+
+builder.Services.AddScoped<UserIRepository, UserRepository>();
+builder.Services.AddScoped<UserSInterface, UserService>();
+
 builder.Services.AddControllers();
 var app = builder.Build();
 

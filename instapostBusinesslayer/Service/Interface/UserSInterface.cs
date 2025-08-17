@@ -4,7 +4,7 @@ namespace instapostBusinesslayer.Service.Interface
 {
     public interface UserSInterface
     {
-        Task<int> CreateUser(UserModel ue);
+        Task<long> CreateUser(UserModel ue);
         Task<UserModel> GetUserById(long id);
 
         Task<bool> UpdateUser(UserModel ue);
