@@ -27,7 +27,7 @@ namespace instapostBusinesslayer.Repository
         }
         public async Task<CategoryEntity> GetCategoryById(long id)
         {
-            var res = await dbContext.CategoryDb.FindAsync(id);
+            var res = await dbContext.CategoryDb.Include(p=>p.posts).Include(u=>u.users).FirstOrDefaultAsync(u=>u.id==id);
             Console.WriteLine("getCategoryBy id result "+res);
             return res;
         }

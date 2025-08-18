@@ -13,9 +13,10 @@ namespace instapostBusinesslayer.Service.Implementation
             this.pr = pr;
         }
 
-        public Task<long> CreatePost(PostModel pm)
+        public async Task<long> CreatePost(long userId,PostReq pmm)
         {
-            return null;
+            var res = await pr.CreatePost(userId, pmm);
+            return res;
         }
         public Task<bool> UpdatePost(PostModel pm)
         {

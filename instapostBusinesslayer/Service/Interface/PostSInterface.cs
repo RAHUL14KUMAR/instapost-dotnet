@@ -4,7 +4,7 @@ namespace instapostBusinesslayer.Service.Interface
 {
     public interface PostSInterface
     {
-        Task<long> CreatePost(PostModel pe);
+        Task<long> CreatePost(long userId, PostReq pe);
         Task<bool> UpdatePost(PostModel pe);
 
         Task<PostModel> GetPostById(long id);

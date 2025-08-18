@@ -14,10 +14,12 @@ namespace instapost.controller
         }
 
         [HttpPost]
-        [Route("createPost")]
-        public async Task<IActionResult> createPost(PostModel pm)
+        [Route("createPost/{userId}")]
+        public async Task<IActionResult> createPost([FromRoute]long userId,[FromBody] PostReq pm)
         {
-            return null;
+            Console.WriteLine("userId " + userId + " postmodel " + pm);
+            var res =await ps.CreatePost(userId, pm);
+            return Ok(res);
         }
 
         [HttpGet]
